@@ -1,0 +1,31 @@
+{
+  "C_Cpp.errorSquiggles": "Disabled",
+  "files.associations": {
+    ".env": "plaintext",
+    "main.h": "c",
+    "argparser.h": "c",
+    "unity.h": "c"
+  },
+  "c-cpp-flylint.clang.pedantic": true,
+  "c-cpp-flylint.lizard.enable": false,
+  "c-cpp-flylint.flexelint.enable": false,
+  "c-cpp-flylint.flawfinder.enable": false,
+  "c-cpp-flylint.language": "c",
+  "c-cpp-flylint.clang.standard": [
+    "c99"
+  ],
+  "c-cpp-flylint.cppcheck.language": "c99",
+  "c-cpp-flylint.includePaths": [
+    "src/unity/src"
+  ],
+  "C_Cpp.default.includePath": [
+    "src/unity/src"
+  ],
+  "c-cpp-flylint.cppcheck.extraArgs": [
+    "-iunity"
+  ],
+  "c-cpp-flylint.cppcheck.suppressions": [
+    "ConfigurationNotChecked"
+  ],
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+}
