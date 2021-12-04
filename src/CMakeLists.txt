@@ -5,7 +5,7 @@ add_subdirectory(unity)
 add_subdirectory(tests)
 
 # Modules
-add_library(argparser modules/argparser)
+add_library(argparser STATIC modules/argparser.c)
 
 # Main
 add_executable(main main.c)
