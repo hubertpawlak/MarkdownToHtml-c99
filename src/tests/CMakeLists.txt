@@ -1,5 +1,14 @@
+# Tell the compiler where is "unity.h"
 include_directories(../unity/src)
 
-add_executable(test_argparser test_argparser.c)
-target_link_libraries(test_argparser argparser unity)
-add_test(NAME test_argparser COMMAND test_argparser)
+# Automatically create tests for CTest
+# Note: requires "cmake .." every time the list of files changes
+
+file(GLOB ArgParserTests "test_argparser_*.c")
+foreach(TestSource ${ArgParserTests})
+  string(REPLACE "${CMAKE_CURRENT_LIST_DIR}/" "" TestName ${TestSource}) # Remove path
+  string(REPLACE ".c" "" TestName ${TestName}) # Remove extension
+  add_executable("${TestName}" "${TestSource}")
+  target_link_libraries("${TestName}" argparser unity)
+  add_test(NAME "${TestName}" COMMAND "${TestName}")
+endforeach(TestSource)

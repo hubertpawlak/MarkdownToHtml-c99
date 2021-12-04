@@ -2,7 +2,9 @@
 
 int main(int argc, char *argv[])
 {
-  ArgFlags flags = getFlagsFromArgs(argc, argv);
-  printf("ArgFlags: %d\n", flags);
+  struct ParsedArgs parsedArgs = getParsedArgs(argc, argv);
+  printf("ArgFlags: %d\n", parsedArgs.flags);
+  printf("Input: %s\n", parsedArgs.inputFile);
+  printf("Output: %s\n", parsedArgs.outputFile);
   return 0;
 }
