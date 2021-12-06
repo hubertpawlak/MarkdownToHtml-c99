@@ -26,7 +26,7 @@ struct ParsedArgs getParsedArgs(int argc, char *argv[])
       if (i + 1 < argc)
       {
         skipNextArg = true;
-        strncpy(parsedArgs.inputFile, argv[i + 1], 255);
+        strncpy(parsedArgs.inputFile, argv[i + 1], FILENAME_MAX);
       }
       else
       {
@@ -41,7 +41,7 @@ struct ParsedArgs getParsedArgs(int argc, char *argv[])
       if (i + 1 < argc)
       {
         skipNextArg = true;
-        strncpy(parsedArgs.outputFile, argv[i + 1], 255);
+        strncpy(parsedArgs.outputFile, argv[i + 1], FILENAME_MAX);
       }
       else
       {

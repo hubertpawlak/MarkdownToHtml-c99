@@ -11,9 +11,28 @@ int main(int argc, char *argv[])
   else if (flags == ARG_FLAG_INVALID || flags == ARG_FLAG_NONE)
   {
     showHelp(true);
+    exit(EXIT_FAILURE);
   }
-  printf("ArgFlags: %d\n", parsedArgs.flags);
-  printf("Input: %s\n", parsedArgs.inputFile);
-  printf("Output: %s\n", parsedArgs.outputFile);
-  return 0;
+  else if (flags & ARG_FLAG_OPEN_FILE)
+  {
+    ConversionType convType;
+    if (flags & ARG_FLAG_FORCE_HTML)
+    {
+      convType = CONVERSION_HTML_TO_MARKDOWN;
+    }
+    else if (flags & ARG_FLAG_FORCE_MARKDOWN)
+    {
+      convType = CONVERSION_MARKDOWN_TO_HTML;
+    }
+    else
+    {
+      convType = determineConversionTypeFromExtension(parsedArgs.inputFile);
+    }
+    if (convType == CONVERSION_UNKNOWN)
+    {
+      printf("Conversion type couldn't be determined from file extension\n");
+      exit(EXIT_FAILURE);
+    }
+  }
+  return EXIT_SUCCESS;
 }

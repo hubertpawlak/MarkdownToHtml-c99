@@ -1,6 +1,7 @@
 #pragma once
 #include <string.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 typedef enum ArgFlags
 {
@@ -17,8 +18,8 @@ typedef enum ArgFlags
 struct ParsedArgs
 {
   ArgFlags flags;
-  char inputFile[256];
-  char outputFile[256];
+  char inputFile[FILENAME_MAX];
+  char outputFile[FILENAME_MAX];
 };
 
 struct ParsedArgs getParsedArgs(int argc, char *argv[]);
