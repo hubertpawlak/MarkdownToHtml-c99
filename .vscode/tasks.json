@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "valgrind: md => html",
+      "type": "shell",
+      "command": "valgrind",
+      "args": [
+        "--leak-check=full",
+        "./build/bin/main",
+        "-i",
+        "example.md",
+        "-f"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
