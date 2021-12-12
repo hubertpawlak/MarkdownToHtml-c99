@@ -11,7 +11,14 @@ foreach(ModuleSource ${moduleFiles})
   string(REPLACE "${CMAKE_CURRENT_LIST_DIR}/" "" ModuleName ${ModuleSource}) # Remove path
   string(REPLACE "modules/" "" ModuleName ${ModuleName}) # Remove subfolder
   string(REPLACE ".c" "" ModuleName ${ModuleName}) # Remove extension
-  add_library(${ModuleName} STATIC ${ModuleSource})
+  # Additional submodules
+  if("${ModuleName}" STREQUAL "tohtml")
+    add_library(${ModuleName} STATIC ${ModuleSource} "modules/exclusivetag.c" "modules/conv_def.c")
+  elseif("${ModuleName}" STREQUAL "tomd")
+    add_library(${ModuleName} STATIC ${ModuleSource} "modules/exclusivetag.c" "modules/conv_def.c")
+  else()
+    add_library(${ModuleName} STATIC ${ModuleSource})
+  endif()
   list(APPEND Modules ${ModuleName})
 endforeach(ModuleSource)
 

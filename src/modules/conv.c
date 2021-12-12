@@ -53,3 +53,33 @@ char *determineDefaultOutputFile(char *inputFilename, ConversionType type)
   strcat(outputFilename, newExtension);                                               // Append new extension
   return outputFilename;
 }
+
+int convertFile(char *inputFilename, char *outputFilename, ConversionType convType)
+{
+  // 1. Open files
+  FILE *input = fopen(inputFilename, "r");
+  if (!input)
+  {
+    printf("Input file (%s) is not readable. Please check the provided path and/or read permissions.\n", inputFilename);
+    return EXIT_FAILURE;
+  }
+  FILE *output = fopen(outputFilename, "w");
+  if (!output)
+  {
+    printf("Output file (%s) is not writable. Please check the provided path and/or read permissions.\n", outputFilename);
+    fclose(input);
+    return EXIT_FAILURE;
+  }
+  // 2. Pass file handler to the right converter
+  if (convType == CONVERSION_MARKDOWN_TO_HTML)
+  {
+    convertFileToHTML(input, output);
+  }
+  if (convType == CONVERSION_HTML_TO_MARKDOWN)
+  {
+    convertFileToMD(input, output);
+  }
+  fclose(input);
+  fclose(output);
+  return EXIT_SUCCESS;
+}
