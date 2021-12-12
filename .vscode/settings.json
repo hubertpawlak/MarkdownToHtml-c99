@@ -1,11 +1,5 @@
 {
   "C_Cpp.errorSquiggles": "Disabled",
-  "files.associations": {
-    ".env": "plaintext",
-    "main.h": "c",
-    "argparser.h": "c",
-    "unity.h": "c"
-  },
   "c-cpp-flylint.clang.pedantic": true,
   "c-cpp-flylint.lizard.enable": false,
   "c-cpp-flylint.flexelint.enable": false,
@@ -28,4 +22,19 @@
     "ConfigurationNotChecked"
   ],
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "cmake.debugConfig": {
+    "cwd": "/mnt/c/prog-stud/projects/markdown-html-conv",
+    "args": [
+      "-i",
+      "example.md",
+      "-o",
+      "example.html",
+      "-f",
+    ]
+  },
+  "cmake.ctestArgs": [
+    "--timeout",
+    "2"
+  ],
+  "todo-tree.filtering.ignoreGitSubmodules": true
 }
