@@ -6,6 +6,7 @@
 #include "exclusivetag.h"
 #include "tohtml_h.h"
 #include "tohtml_br.h"
+#include "tohtml_bius.h"
 #include "conv_def.h"
 
 size_t readFreshChunkAndWriteOldestBuffer(char **buffers, FILE *inputFile, FILE *outputFile);

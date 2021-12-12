@@ -54,9 +54,16 @@ int convertFileToHTML(FILE *inputFile, FILE *outputFile)
     processExclusiveTag(detectAndProcessHTag, &skipThisFunction, buffers);  // h[1-6]
     processExclusiveTag(detectAndProcessBrTag, &skipThisFunction, buffers); // br
     // processExclusiveTag(detectAndProcessTableTag, &skipThisFunction, buffers); // table
-    // detectAndProcessBIUSTags(buffers);                                         // b,i,u,s
-    // detectAndProcessImgTags(buffers);                                          // img
-    // detectAndProcessLinkTags(buffers);                                         // a
+    // https://en.cppreference.com/w/c/string/byte/strtok
+    while (detectAndProcessBIUSTags(buffers)) // b,i,u,s
+    {
+    }
+    // while (detectAndProcessImgTags(buffers)) // img
+    // {
+    // }
+    // while (detectAndProcessLinkTags(buffers)) // a
+    // {
+    // }
   }
   // Free read buffers
   for (size_t i = 0; i < READ_BUFFERS; i++)

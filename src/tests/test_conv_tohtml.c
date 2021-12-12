@@ -24,6 +24,11 @@ char *inputStrings[] = {
     "\n",
     "a\n",
     "\n",
+    // bius
+    "not *i* symmetric\n",
+    "not **b** symmetric\n",
+    "not *outside *inside** symmetric\n",
+    "not ~~s~~ symmetric\n",
     // extra h1
     "# last line without newline",
 };
@@ -45,6 +50,11 @@ char *outputStrings[] = {
     "<br />\n",
     "a\n",
     "<br />\n",
+    // bius
+    "not <i>i</i> symmetric\n",
+    "not <b>b</b> symmetric\n",
+    "not <i>outside <i>inside</i></i> symmetric\n",
+    "not <s>s</s> symmetric\n",
     // extra h1
     "<h1>last line without newline</h1>\n",
 };
