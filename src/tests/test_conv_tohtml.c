@@ -29,6 +29,12 @@ char *inputStrings[] = {
     "not **b** symmetric\n",
     "not *outside *inside** symmetric\n",
     "not ~~s~~ symmetric\n",
+    // link
+    "[text](whatever)\n",
+    "not [text](whatever) symmetric\n",
+    // img
+    "![alt](whatever)\n",
+    "not ![alt](whatever) symmetric\n",
     // extra h1
     "# last line without newline",
 };
@@ -55,6 +61,12 @@ char *outputStrings[] = {
     "not <b>b</b> symmetric\n",
     "not <i>outside <i>inside</i></i> symmetric\n",
     "not <s>s</s> symmetric\n",
+    // link
+    "<a href=\"whatever\">text</a>\n",
+    "not <a href=\"whatever\">text</a> symmetric\n",
+    // img
+    "<img src=\"whatever\" alt=\"alt\" />\n",
+    "not <img src=\"whatever\" alt=\"alt\" /> symmetric\n",
     // extra h1
     "<h1>last line without newline</h1>\n",
 };

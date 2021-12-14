@@ -58,12 +58,9 @@ int convertFileToHTML(FILE *inputFile, FILE *outputFile)
     while (detectAndProcessBIUSTags(buffers)) // b,i,u,s
     {
     }
-    // while (detectAndProcessImgTags(buffers)) // img
-    // {
-    // }
-    // while (detectAndProcessLinkTags(buffers)) // a
-    // {
-    // }
+    while (detectAndProcessImgAndLinkTags(buffers)) // img, a
+    {
+    }
   }
   // Free read buffers
   for (size_t i = 0; i < READ_BUFFERS; i++)
