@@ -23,7 +23,15 @@ bool detectAndProcessBrTag(char **buffers)
     }
     else
     {
-      strcpy(buffer, "<br />\n");
+      bool listTagRecentlyClosed = strstr(prevBuffer, "</ol>") || strstr(prevBuffer, "</li>");
+      if (listTagRecentlyClosed)
+      {
+        strcpy(buffer, "\n");
+      }
+      else
+      {
+        strcpy(buffer, "<br />\n");
+      }
     }
   }
   return isValid;

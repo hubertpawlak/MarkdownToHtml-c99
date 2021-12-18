@@ -8,6 +8,7 @@
 #include "tohtml_br.h"
 #include "tohtml_bius.h"
 #include "tohtml_imglink.h"
+#include "tohtml_list.h"
 #include "conv_def.h"
 
 size_t readFreshChunkAndWriteOldestBuffer(char **buffers, FILE *inputFile, FILE *outputFile);

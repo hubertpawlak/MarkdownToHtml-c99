@@ -35,6 +35,20 @@ char *inputStrings[] = {
     // img
     "![alt](whatever)\n",
     "not ![alt](whatever) symmetric\n",
+    // ul
+    "- a\n",
+    "- b\n",
+    "- c\n",
+    "      \n",
+    // ol
+    "9999. a\n",
+    "1. b\n",
+    "7. c\n",
+    "1. d\n",
+    "7123. e\n",
+    "18231. f\n",
+    "2. g\n",
+    "      \n"
     // extra h1
     "# last line without newline",
 };
@@ -67,6 +81,24 @@ char *outputStrings[] = {
     // img
     "<img src=\"whatever\" alt=\"alt\" />\n",
     "not <img src=\"whatever\" alt=\"alt\" /> symmetric\n",
+    // ul
+    "<ul>\n",
+    "<li>a</li>\n",
+    "<li>b</li>\n",
+    "<li>c</li>\n",
+    "</ul>\n",
+    "\n",
+    // ol
+    "<ol start=\"9999\">\n",
+    "<li>a</li>\n",
+    "<li>b</li>\n",
+    "<li>c</li>\n",
+    "<li>d</li>\n",
+    "<li>e</li>\n",
+    "<li>f</li>\n",
+    "<li>g</li>\n",
+    "</ol>\n",
+    "\n",
     // extra h1
     "<h1>last line without newline</h1>\n",
 };
