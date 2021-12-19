@@ -16,6 +16,6 @@ function(easyTest TestFilesPattern LinkModules)
 endfunction()
 
 easyTest("test_argparser_*.c" "argparser")
-easyTest("test_conv_*.c" "conv;exclusivetag;tohtml;tohtml_h;tohtml_br;tohtml_bius;tohtml_imglink;tohtml_list;tomd")
+easyTest("test_conv_*.c" "conv;exclusivetag;tohtml;tohtml_h;tohtml_br;tohtml_bius;tohtml_imglink;tohtml_list;tohtml_table;tomd")
 easyTest("test_fileexists_*.c" "fileexists")
 easyTest("test_showhelp_*.c" "showhelp")

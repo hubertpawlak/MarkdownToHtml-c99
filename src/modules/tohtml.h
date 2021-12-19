@@ -9,6 +9,7 @@
 #include "tohtml_bius.h"
 #include "tohtml_imglink.h"
 #include "tohtml_list.h"
+#include "tohtml_table.h"
 #include "conv_def.h"
 
 size_t readFreshChunkAndWriteOldestBuffer(char **buffers, FILE *inputFile, FILE *outputFile);

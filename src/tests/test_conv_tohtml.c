@@ -49,6 +49,15 @@ char *inputStrings[] = {
     "18231. f\n",
     "2. g\n",
     "      \n"
+    // table
+    "|a|   b| a + b   |\n",
+    "|-|----|---|\n",
+    "| 1 |2|3|\n",
+    "|x|y|\n",
+    "||empty tokens|are ignored|\n",
+    "| | |expect |extra cell|\n",
+    "|empty| |between|\n",
+    "\n",
     // extra h1
     "# last line without newline",
 };
@@ -99,6 +108,16 @@ char *outputStrings[] = {
     "<li>g</li>\n",
     "</ol>\n",
     "\n",
+    // table
+    "<table>\n",
+    "<tr><td>a</td><td>   b</td><td> a + b   </td></tr>\n",
+    "<tr><td>-</td><td>----</td><td>---</td></tr>\n",
+    "<tr><td> 1 </td><td>2</td><td>3</td></tr>\n",
+    "<tr><td>x</td><td>y</td></tr>\n",
+    "<tr><td>empty tokens</td><td>are ignored</td></tr>\n",
+    "<tr><td> </td><td> </td><td>expect </td><td>extra cell</td></tr>\n",
+    "<tr><td>empty</td><td> </td><td>between</td></tr>\n",
+    "</table>\n",
     // extra h1
     "<h1>last line without newline</h1>\n",
 };

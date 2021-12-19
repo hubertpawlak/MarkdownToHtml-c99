@@ -51,12 +51,11 @@ int convertFileToHTML(FILE *inputFile, FILE *outputFile)
     processedLines++;
     // Pass all buffers to helper functions to detect and process whole chunks
     bool skipThisFunction = false;
-    processExclusiveTag(detectAndProcessHTag, &skipThisFunction, buffers);    // h[1-6]
-    processExclusiveTag(detectAndProcessListTag, &skipThisFunction, buffers); // ol,ul
-    // processExclusiveTag(detectAndProcessTableTag, &skipThisFunction, buffers); // table
-    processExclusiveTag(detectAndProcessBrTag, &skipThisFunction, buffers); // br
-    // https://en.cppreference.com/w/c/string/byte/strtok
-    while (detectAndProcessBIUSTags(buffers)) // b,i,u,s
+    processExclusiveTag(detectAndProcessHTag, &skipThisFunction, buffers);     // h[1-6]
+    processExclusiveTag(detectAndProcessListTag, &skipThisFunction, buffers);  // ol,ul
+    processExclusiveTag(detectAndProcessTableTag, &skipThisFunction, buffers); // table
+    processExclusiveTag(detectAndProcessBrTag, &skipThisFunction, buffers);    // br
+    while (detectAndProcessBIUSTags(buffers))                                  // b,i,u,s
     {
     }
     while (detectAndProcessImgAndLinkTags(buffers)) // img, a
