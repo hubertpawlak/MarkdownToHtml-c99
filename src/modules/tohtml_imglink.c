@@ -4,7 +4,6 @@ bool detectAndProcessImgAndLinkTags(char **buffers)
 {
   bool detectedTag = false;
   char *buffer = buffers[READ_BUFFERS - 2];
-  size_t bufferLen = strlen(buffer);
   char *openingPtr = strchr(buffer, '[');   // Also check for '!' before
   char *separatorPtr = strchr(buffer, ']'); // Also check for '(' after
   char *closingPtr = strchr(buffer, ')');

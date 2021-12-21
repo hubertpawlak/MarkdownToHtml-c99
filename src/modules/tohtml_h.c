@@ -4,9 +4,7 @@ bool detectAndProcessHTag(char **buffers)
 {
   bool isValid = true;
   char *buffer = buffers[READ_BUFFERS - 2];
-  char *nextBuffer = buffers[READ_BUFFERS - 1];
   size_t bufferLen = strlen(buffer);
-  size_t nextBufferLen = strlen(nextBuffer);
   size_t hashtags = 0; // Both counter and cursor position
   while (hashtags < bufferLen && hashtags <= 6)
   {
