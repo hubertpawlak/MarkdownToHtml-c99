@@ -41,7 +41,7 @@ bool detectAndProcessListTag(char **buffers)
           tmpBuffer = calloc(strlen(buffer), sizeof(char));
           strncpy(tmpBuffer, afterDotSpace, afterDotSpaceLen - (afterDotSpace[afterDotSpaceLen - 1] == '\n' ? 1 : 0)); // Skip "N." and "\n"
           // Extract counter start
-          char *beforeDotBuffer = calloc(dotPtr - buffer, sizeof(char));
+          char *beforeDotBuffer = calloc(dotPtr - buffer + 1, sizeof(char));
           strncpy(beforeDotBuffer, buffer, dotPtr - buffer);
           sprintf(buffer, "<ol start=\"%s\">\n<li>%s</li>\n", beforeDotBuffer, tmpBuffer);
           free(beforeDotBuffer);

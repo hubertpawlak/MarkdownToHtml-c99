@@ -9,7 +9,7 @@ bool detectAndProcessTableTag(char **buffers)
   bool thisLineHasTableCells = bufferLen > 2 && buffer[0] == '|' && &buffer[bufferLen - 1] - strrchr(buffer, '|') <= 2;
   if (thisLineHasTableCells)
   {
-    char *tmpBuffer = calloc(bufferLen, sizeof(char));
+    char *tmpBuffer = calloc(bufferLen + 1, sizeof(char));
     strcpy(tmpBuffer, buffer); // Copy buffer as strtok is destructive
     if (!tableOpened)
     {

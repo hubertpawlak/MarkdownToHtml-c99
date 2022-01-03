@@ -22,7 +22,7 @@ bool detectAndProcessImgAndLinkTags(char **buffers)
     }
     // Split data into allocated buffers
     // pre + ![alt](src) + post
-    char *preBuffer = calloc(openingPtr - buffer, sizeof(char));
+    char *preBuffer = calloc(openingPtr - buffer + 1, sizeof(char));
     char *altBuffer = calloc(separatorPtr - openingPtr, sizeof(char));
     char *srcBuffer = calloc(closingPtr - &separatorPtr[1], sizeof(char));
     char *postBuffer = calloc(strlen(closingPtr), sizeof(char));
